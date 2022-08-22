@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  color: #FFF;
+  padding: 0;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1rem;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #3b404f;
+  border-right: 5px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+}
+nav .logo {
+  text-align: center;
+  padding: 15px 0px;
+  border-bottom: 5px solid white;
+  cursor: pointer;
+}
+nav .nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+nav .nav li {
+  text-align: center;
+  margin: 10px 0px;
+}
+nav .nav li a {
+  padding: 20px;
+  line-height: 1.5rem;
+  transition: all 0.25s ease;
+}
+nav .nav li a h3 {
+  line-height: 1.5rem;
+  transition: all 0.25s ease;
+}
+nav .nav li a:hover {
+  background: #c3cbe8;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  line-height: 1.5rem;
+  transition: all 0.25s ease;
+}
+nav .nav li a:hover h3 {
+  color: #3b404f;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  transition: all 0.25s ease;
+}
+nav .nav li .nav-text {
+  display: block;
+}
+nav .nav li .icon {
+  display: none;
+}
+
+main {
+  margin-left: 200px;
+  background: #c3cbe8;
+}
+main #show-nav a .burger-btn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+}
+main #show-nav a .burger-btn .burger-line {
+  position: absolute;
+  background: black;
+  height: 10px;
+  width: 80%;
+  top: 25px;
+  left: 6px;
+  border-radius: 0px;
+}
+main #show-nav a .burger-btn .burger-line::before {
+  content: "";
+  position: absolute;
+  background: black;
+  height: 10px;
+  width: 100%;
+  top: 15px;
+  border-radius: 2px 2px 15px 15px;
+}
+main #show-nav a .burger-btn .burger-line::after {
+  content: "";
+  position: absolute;
+  background: black;
+  height: 10px;
+  width: 100%;
+  bottom: 15px;
+  border-radius: 15px 15px 2px 2px;
+}
+main #banner {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+main #banner .banner-img {
+  height: 100vh;
+}
+main #banner .banner-content {
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  top: 40vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+main #banner .scroll-down {
+  position: absolute;
+  font-size: 3rem;
+  text-align: center;
+  top: 90vh;
+}
+main #projects {
+  height: 100vh;
+}
+main #projects .title {
+  font-size: 4rem;
+  text-align: center;
+}
+
+#contact {
+  display: flex;
+  background: #3b404f;
+  border-top: 5px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  padding: 30px 10px 50px 10px;
+}
+#contact .contact-col {
+  width: 50%;
+}
+#contact .contact-col .contact-info {
+  padding: 5px;
+  color: #FFF;
+}
+#contact .contact-col .contact-info h2 {
+  font-size: 2.5rem;
+}
+#contact .contact-col .contact-info p {
+  margin-bottom: 5px;
+}
+#contact .contact-col .contact-info span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#contact .contact-col .contact-form {
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+}
+#contact .contact-col .contact-form .col-1, #contact .contact-col .contact-form .col-2 {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+#contact .contact-col .contact-form .name {
+  display: flex;
+  flex-direction: row;
+}
+#contact .contact-col .contact-form .col-1 {
+  width: 49%;
+}
+#contact .contact-col .contact-form .col-1:first-child {
+  margin-right: 2%;
+}
+#contact .contact-col .contact-form .form-control {
+  background: #c3cbe8;
+  border: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  font-size: 1.25rem;
+  color: #3b404f;
+}
+#contact .contact-col .contact-form .form-control:hover {
+  outline: 2px solid white;
+  box-shadow: inset 0 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+#contact .contact-col .contact-form .form-control:focus {
+  outline: 3px solid white;
+  box-shadow: 0 0 10px white, inset 0 0 2px 2px rgba(0, 0, 0, 0.75);
+}
+#contact .contact-col .contact-form textarea {
+  height: 200px;
+}
+#contact .contact-col .contact-form .submit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+#contact .contact-col .contact-form .submit-btn-container .btn {
+  background: #c3cbe8;
+  border: 0;
+  font-size: 1.2rem;
+  color: #FFF;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+  padding: 7px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#contact .contact-col .contact-form .submit-btn-container .btn:hover {
+  outline: 3px solid white;
+  box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 992px) {
+  nav {
+    width: 100px;
+  }
+  nav .logo {
+    font-size: 2rem;
+  }
+  nav .nav li a {
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  nav .nav li a .nav-text {
+    display: none;
+  }
+  nav .nav li a:hover {
+    color: #3b404f;
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  nav .nav li .icon {
+    display: block;
+  }
+  main {
+    margin-left: 100px;
+  }
+  #contact .contact-col .contact-form .name {
+    flex-direction: column;
+  }
+  #contact .contact-col .contact-form .name .col-1 {
+    width: 100%;
+  }
+  #contact .contact-col .contact-form .name .col-1:first-child {
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  nav {
+    display: none;
+  }
+  nav:target {
+    display: block;
+    z-index: 1;
+  }
+  main {
+    margin-left: 0;
+  }
+  main #show-nav a .burger-btn {
+    display: block;
+  }
+  #contact {
+    flex-direction: column;
+  }
+  #contact .contact-col {
+    width: 100%;
+  }
+  #contact .contact-col .contact-form .name {
+    flex-direction: row;
+  }
+  #contact .contact-col .contact-form .name .col-1 {
+    width: 49%;
+  }
+  #contact .contact-col .contact-form .name .col-1:first-child {
+    margin-right: 2%;
+  }
+}
+@media (max-width: 483px) {
+  #contact .contact-col .contact-form .name {
+    flex-direction: column;
+  }
+  #contact .contact-col .contact-form .name .col-1 {
+    width: 100%;
+  }
+  #contact .contact-col .contact-form .name .col-1:first-child {
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=main.css.map */
