@@ -1,6 +1,34 @@
 main {
   margin-left: 200px;
-  height: 100vh;
+  min-height: 100vh;
+}
+main .scion-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 20px 20px 20px;
+  color: #3b404f;
+  background: #c3cbe8;
+}
+main .scion-container h2 {
+  font-size: 2.5rem;
+  color: #3b404f;
+  margin-top: 15px;
+}
+main .scion-container h3 {
+  margin-top: 5px;
+  font-size: 1.75rem;
+  color: #3b404f;
+}
+main .scion-container p {
+  color: #3b404f;
+}
+main .scion-container a {
+  color: #3b404f;
+  font-size: 1.5rem;
+}
+main .scion-container a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 992px) {
