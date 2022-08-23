@@ -125,6 +125,7 @@ main {
                 width: 60px;
                 border-radius: 50%;
                 box-shadow: 0 0 10px $shadowDark;
+                z-index: 2;
                 .burger-line {
                     position: absolute;
                     background: black;
