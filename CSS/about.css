@@ -1,11 +1,41 @@
 main {
   margin-left: 200px;
-  height: 100vh;
+  min-height: 100vh;
+}
+main #about-me {
+  text-align: center;
+  padding-top: 60px;
+}
+main #about-me .profile-img-container {
+  display: flex;
+  justify-content: center;
+}
+main #about-me .profile-img-container .profile-img {
+  height: 200px;
+  width: 199px;
+  border-radius: 50%;
+  border: 5px solid #3b404f;
+}
+main #about-me h1 {
+  color: #3b404f;
+}
+main #about-me p {
+  color: #3b404f;
+  margin: 0px 20px;
+  padding: 20px 0px;
+  text-align: left;
+  line-height: 2rem;
+}
+main #about-me p .line-br {
+  display: block;
 }
 
 @media (max-width: 992px) {
   main {
     margin-left: 100px;
+  }
+  main #about-me p .line-br {
+    display: none;
   }
 }
 @media (max-width: 767px) {

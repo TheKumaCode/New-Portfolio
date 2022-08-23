@@ -151,8 +151,13 @@ main #banner {
   position: relative;
   overflow: hidden;
 }
-main #banner .banner-img {
-  height: 100vh;
+main #banner .banner-img-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+main #banner .banner-img-container .banner-img {
+  min-height: 100vh;
 }
 main #banner .banner-content {
   position: absolute;
@@ -168,13 +173,90 @@ main #banner .scroll-down {
   font-size: 3rem;
   text-align: center;
   top: 90vh;
+  height: 10vh;
+}
+main #banner .scroll-down:focus {
+  outline: 5px solid white !important;
+  box-shadow: 0 0 10px white !important;
 }
 main #projects {
-  height: 100vh;
+  min-height: 100vh;
 }
 main #projects .title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: center;
+  margin: 15px;
+}
+main #projects .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 20px 20px 20px;
+  justify-content: center;
+}
+main #projects .projects-container .project {
+  width: 390px;
+  height: 375px;
+  margin: 10px;
+  padding: 10px;
+  background: #3b404f;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  transition: all 0.25s ease;
+}
+main #projects .projects-container .project .project-img-container {
+  display: flex;
+  justify-content: center;
+  width: 370px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+}
+main #projects .projects-container .project .project-img-container .project-img {
+  height: 215px;
+}
+main #projects .projects-container .project .project-info {
+  width: 370px;
+  height: 154px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main #projects .projects-container .project .project-info .project-name {
+  font-size: 2rem;
+}
+main #projects .projects-container .project .project-info .project-about {
+  margin-bottom: auto;
+}
+main #projects .projects-container .project .project-info .languages {
+  display: flex;
+  justify-content: right;
+}
+main #projects .projects-container .project .project-info .languages .language {
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: #FFF;
+}
+main #projects .projects-container .project .project-info .languages .language.html {
+  background-color: #39b869;
+}
+main #projects .projects-container .project .project-info .languages .language.css {
+  background-color: #26dbcb;
+}
+main #projects .projects-container .project .project-info .languages .language.php {
+  background-color: #e38c3f;
+}
+main #projects .projects-container .project .project-info .languages .language.java-script {
+  background-color: #804ebd;
+}
+main #projects .projects-container .project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+main #projects .projects-container .project:focus {
+  outline: 5px solid white !important;
+  box-shadow: 0 0 10px white !important;
 }
 
 #contact {
@@ -238,6 +320,10 @@ main #projects .title {
   outline: 3px solid white;
   box-shadow: 0 0 10px white, inset 0 0 2px 2px rgba(0, 0, 0, 0.75);
 }
+#contact .contact-col .contact-form .required::after {
+  content: "*";
+  color: red;
+}
 #contact .contact-col .contact-form textarea {
   height: 200px;
 }
@@ -260,6 +346,10 @@ main #projects .title {
   outline: 3px solid white;
   box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.75);
 }
+#contact .contact-col .contact-form .submit-btn-container .btn:focus {
+  outline: 5px solid white !important;
+  box-shadow: 0 0 10px white !important;
+}
 
 @media (max-width: 992px) {
   nav {
@@ -279,6 +369,10 @@ main #projects .title {
     color: #3b404f;
     line-height: 2rem;
     font-size: 2rem;
+  }
+  nav .nav li a:focus {
+    outline: 5px solid white !important;
+    box-shadow: 0 0 10px white !important;
   }
   nav .nav li .icon {
     display: block;

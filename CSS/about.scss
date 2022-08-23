@@ -1,11 +1,49 @@
+$colorPrimary: #3b404f;
+$colorSecondary: #c3cbe8;
+
+
 main {
     margin-left: 200px;
-    height: 100vh;
+    min-height: 100vh;
+    #about-me {
+        text-align: center;
+        padding-top: 60px;
+        .profile-img-container {
+            display: flex;
+            justify-content: center;
+            .profile-img {
+                height: 200px;
+                width: 199px;
+                border-radius: 50%;
+                border: 5px solid $colorPrimary;
+            }
+        }
+        h1 {
+            color: $colorPrimary;
+        }
+        p {
+            color: $colorPrimary;
+            margin: 0px 20px;
+            padding: 20px 0px;
+            text-align: left;
+            line-height: 2rem;
+            .line-br {
+                display: block;
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {
     main {
         margin-left: 100px;
+        #about-me {
+            p {
+                .line-br {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
