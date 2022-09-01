@@ -58,6 +58,17 @@ nav {
   background: #3b404f;
   border-right: 5px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+  z-index: 2;
+}
+nav .close-btn {
+  font-size: 4rem;
+  color: red;
+  position: absolute;
+  bottom: 10px;
+  width: calc(100% - 5px);
+  text-align: center;
+  display: none;
+  cursor: pointer;
 }
 nav .logo {
   text-align: center;
@@ -105,7 +116,7 @@ nav .nav li .icon {
 main {
   background: #c3cbe8;
 }
-main #show-nav a .burger-btn {
+main .burger-btn {
   display: none;
   position: fixed;
   top: 10px;
@@ -117,7 +128,7 @@ main #show-nav a .burger-btn {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
   z-index: 2;
 }
-main #show-nav a .burger-btn .burger-line {
+main .burger-btn .burger-line {
   position: absolute;
   background: black;
   height: 10px;
@@ -126,7 +137,7 @@ main #show-nav a .burger-btn .burger-line {
   left: 6px;
   border-radius: 0px;
 }
-main #show-nav a .burger-btn .burger-line::before {
+main .burger-btn .burger-line::before {
   content: "";
   position: absolute;
   background: black;
@@ -135,7 +146,7 @@ main #show-nav a .burger-btn .burger-line::before {
   top: 15px;
   border-radius: 2px 2px 15px 15px;
 }
-main #show-nav a .burger-btn .burger-line::after {
+main .burger-btn .burger-line::after {
   content: "";
   position: absolute;
   background: black;
@@ -172,14 +183,27 @@ main #show-nav a .burger-btn .burger-line::after {
   nav {
     display: none;
   }
-  nav:target {
+  nav .close-btn {
     display: block;
-    z-index: 1;
   }
   main {
     margin-left: 0;
   }
-  main #show-nav a .burger-btn {
+  main .burger-btn {
     display: block;
+  }
+}
+@media (min-width: 767px) {
+  #nav {
+    display: block !important;
+  }
+  #nav .close-btn {
+    display: none;
+  }
+  main {
+    margin-left: 0;
+  }
+  main .burger-btn {
+    display: none !important;
   }
 }/*# sourceMappingURL=nav.css.map */

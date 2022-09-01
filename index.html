@@ -31,6 +31,7 @@
                     <a href="#contact"><h3 class="nav-text">Contact</h3><i class="fa-solid fa-address-book icon"></i></a>
                 </li>
             </ul>
+            <h1 class="close-btn">X</h1>
         </nav>
         <main>
             <div id="banner">
@@ -38,19 +39,15 @@
                     <img class="banner-img" src="Images/Banner.jpeg" alt="Banner Image">
                 </div>
                 <div class="banner-content">
-                    <h1 class="intro-name">Hi, I'm Robertas</h1>
-                    <p class="bio">I'm a developer.</p>
+                    <h1 class="intro-name" id="intro-name"></h1>
+                    <p class="bio" id="bio"></p>
                 </div>
                 <a class="scroll-down" href="#projects">
                     <i class="fa-solid fa-angle-down"></i>
                 </a>
             </div>
-            <div id="show-nav">
-                <a href="#nav">
-                    <div class="burger-btn">
-                        <sdiv class="burger-line"></span>
-                    </div>
-                </a>
+            <div class="burger-btn">
+                <sdiv class="burger-line"></span>
             </div>
             <div id="projects">
                 <h1 class="title">Projects</h1>
@@ -152,27 +149,27 @@
                     </div>
                 </div>
                 <div class="contact-col">
-                    <form method="POST" accept="utf-8" class="contact-form" id="contact-form">
+                    <form method="POST" accept="utf-8" class="contact-form" id="contact-form" name="contactForm" novalidate>
                         <div class="name">
                             <div class="col-1">
-                                <label for="first-name" class="required">First Name</label>
+                                <label for="first-name" class="required firstName">First Name</label>
                                 <input type="text" class="form-control" id="first-name" name="first name">
                             </div>
                             <div class="col-1">
-                                <label for="last-name" class="required">Last Name</label>
+                                <label for="last-name">Last Name</label>
                                 <input type="text" class="form-control" id="last-name" name="last name">
                             </div>
                         </div>
                         <div class="col-2">
-                            <label for="email" class="required">Email</label>
+                            <label for="email" class="required email">Email</label>
                             <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="col-2">
-                            <label for="subject" class="required">Subject</label>
+                            <label for="subject">Subject</label>
                             <input type="text" class="form-control" id="subject" name="emailsubject">
                         </div>
                         <div class="col-2">
-                            <label for="message" class="required">Message</label>
+                            <label for="message" class="required message">Message</label>
                             <textarea type="text" class="form-control" id="message" name="emailmessage"></textarea>
                         </div>
                         <div class="submit-btn-container">
@@ -182,5 +179,6 @@
                 </div>
             </div>
         </main>
+        <script src="JS/main.js"></script>
     </body>
 </html>

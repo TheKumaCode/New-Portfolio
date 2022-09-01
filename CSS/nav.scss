@@ -67,6 +67,17 @@ nav {
     background: $colorPrimary;
     border-right: 5px solid white;
     box-shadow: 0 0 10px $shadowDark;
+    z-index: 2;
+    .close-btn {
+        font-size: 4rem;
+        color: red;
+        position: absolute;
+        bottom: 10px;
+        width: calc(100% - 5px);
+        text-align: center;
+        display: none;
+        cursor: pointer;
+    }
     .logo {
         text-align: center;
         padding: 15px 0px;
@@ -113,46 +124,42 @@ nav {
 
 main {
     background: $colorSecondary;
-    #show-nav {
-        a {
-            .burger-btn {
-                display: none;
-                position: fixed;
-                top: 10px;
-                left: 20px;
-                background-color: white;
-                height: 60px;
-                width: 60px;
-                border-radius: 50%;
-                box-shadow: 0 0 10px $shadowDark;
-                z-index: 2;
-                .burger-line {
-                    position: absolute;
-                    background: black;
-                    height: 10px;
-                    width: 80%;
-                    top: 25px;
-                    left: 6px;
-                    border-radius: 0px;
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        background: black;
-                        height: 10px;
-                        width: 100%;
-                        top: 15px;
-                        border-radius: 2px 2px 15px 15px;
-                    }
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        background: black;
-                        height: 10px;
-                        width: 100%;
-                        bottom: 15px;
-                        border-radius: 15px 15px 2px 2px;
-                    }
-                }
+    .burger-btn {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 20px;
+        background-color: white;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px $shadowDark;
+        z-index: 2;
+        .burger-line {
+            position: absolute;
+            background: black;
+            height: 10px;
+            width: 80%;
+            top: 25px;
+            left: 6px;
+            border-radius: 0px;
+            &::before {
+                content: "";
+                position: absolute;
+                background: black;
+                height: 10px;
+                width: 100%;
+                top: 15px;
+                border-radius: 2px 2px 15px 15px;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                background: black;
+                height: 10px;
+                width: 100%;
+                bottom: 15px;
+                border-radius: 15px 15px 2px 2px;
             }
         }
     }
@@ -189,19 +196,29 @@ main {
 @media (max-width: 767px) {
     nav {
         display: none;
-        &:target {
+        .close-btn {
             display: block;
-            z-index: 1;
         }
     }
     main {
         margin-left: 0;
-        #show-nav {
-            a {
-                .burger-btn {
-                    display: block;
-                }
-            }
+        .burger-btn {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 767px) {
+    #nav {
+        display: block !important;
+        .close-btn {
+            display: none;
+        }
+    }
+    main {
+        margin-left: 0;
+        .burger-btn {
+            display: none !important;
         }
     }
 }

@@ -106,7 +106,7 @@ main {
   margin-left: 200px;
   background: #c3cbe8;
 }
-main #show-nav a .burger-btn {
+main #show-nav .burger-btn {
   display: none;
   position: fixed;
   top: 10px;
@@ -118,7 +118,7 @@ main #show-nav a .burger-btn {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
   z-index: 2;
 }
-main #show-nav a .burger-btn .burger-line {
+main #show-nav .burger-btn .burger-line {
   position: absolute;
   background: black;
   height: 10px;
@@ -127,7 +127,7 @@ main #show-nav a .burger-btn .burger-line {
   left: 6px;
   border-radius: 0px;
 }
-main #show-nav a .burger-btn .burger-line::before {
+main #show-nav .burger-btn .burger-line::before {
   content: "";
   position: absolute;
   background: black;
@@ -136,7 +136,7 @@ main #show-nav a .burger-btn .burger-line::before {
   top: 15px;
   border-radius: 2px 2px 15px 15px;
 }
-main #show-nav a .burger-btn .burger-line::after {
+main #show-nav .burger-btn .burger-line::after {
   content: "";
   position: absolute;
   background: black;
@@ -323,6 +323,19 @@ main #projects .projects-container .project:focus {
 }
 #contact .contact-col .contact-form .required::after {
   content: "*";
+  font-size: 1.1rem;
+  color: white;
+}
+#contact .contact-col .contact-form .required.noFirstName::after {
+  content: "* First Name Required";
+  color: red;
+}
+#contact .contact-col .contact-form .required.noEmail::after {
+  content: "* Invalid Email Address";
+  color: red;
+}
+#contact .contact-col .contact-form .required.noMessage::after {
+  content: "* Message Field Empty";
   color: red;
 }
 #contact .contact-col .contact-form textarea {
@@ -402,7 +415,7 @@ main #projects .projects-container .project:focus {
   main {
     margin-left: 0;
   }
-  main #show-nav a .burger-btn {
+  main #show-nav .burger-btn {
     display: block;
   }
   #contact {
