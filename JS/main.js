@@ -113,14 +113,15 @@ if (previewForm != null) {
 }
 
 const firstExample = document.getElementById('first-example')
-const firstHTML = document.getElementById('first-example').querySelector('.html')
-const firstSCSS = document.getElementById('first-example').querySelector('.scss')
-const firstJS = document.getElementById('first-example').querySelector('.js')
-const firstHTMLCode = document.getElementById('first-example').querySelector('.code-html')
-const firstSCSSCode = document.getElementById('first-example').querySelector('.code-scss')
-const firstJSCode = document.getElementById('first-example').querySelector('.code-js')
 
 if (firstExample != null) {
+    const firstHTML = document.getElementById('first-example').querySelector('.html')
+    const firstSCSS = document.getElementById('first-example').querySelector('.scss')
+    const firstJS = document.getElementById('first-example').querySelector('.js')
+    const firstHTMLCode = document.getElementById('first-example').querySelector('.code-html')
+    const firstSCSSCode = document.getElementById('first-example').querySelector('.code-scss')
+    const firstJSCode = document.getElementById('first-example').querySelector('.code-js')
+
     firstHTML.addEventListener('click', () => {
         firstHTML.classList.add('selected')
         firstJS.classList.remove('selected')
@@ -146,5 +147,58 @@ if (firstExample != null) {
         firstHTMLCode.classList.remove('open')
         firstJSCode.classList.add('open')
         firstSCSSCode.classList.remove('open')
+    })
+}
+
+const projectSelect = document.getElementById('project-sort')
+
+if (projectSelect != null) {
+    var project = document.querySelectorAll('.project')
+    var select = document.getElementById('project-selector')
+    var selectedProject = select.value
+    projectSelect.addEventListener('click', () => {
+        selectedProject = select.value
+
+        if (selectedProject == "all") {
+            for (i = 0; i < project.length; i++) {
+                project[i].removeAttribute('style')
+            }
+        }
+        if (selectedProject == "css") {
+            for (i = 0; i < project.length; i++) {
+                if (!project[i].classList.contains("css")) {
+                    project[i].style["display"] = 'none'
+                } else {
+                    project[i].style["display"] = 'block'
+                }
+            }
+        }
+        if (selectedProject == "html") {
+            for (i = 0; i < project.length; i++) {
+                if (!project[i].classList.contains("html")) {
+                    project[i].style["display"] = 'none'
+                } else {
+                    project[i].style["display"] = 'block'
+                }
+            }
+        }
+        if (selectedProject == "php") {
+            for (i = 0; i < project.length; i++) {
+                if (!project[i].classList.contains("php")) {
+                    project[i].style["display"] = 'none'
+                } else {
+                    project[i].style["display"] = 'block'
+                }
+            }
+        }
+        if (selectedProject == "js") {
+            for (i = 0; i < project.length; i++) {
+                if (!project[i].classList.contains("js")) {
+                    project[i].style["display"] = 'none'
+                } else {
+                    project[i].style["display"] = 'block'
+                }
+            }
+        }
     })
 }

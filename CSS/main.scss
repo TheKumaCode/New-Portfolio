@@ -197,10 +197,32 @@ main {
     }
     #projects {
         min-height: 100vh;
-        .title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin: 15px;
+        .projects-header {
+            position: relative;
+            .title {
+                font-size: 2.5rem;
+                text-align: center;
+                margin: 15px;
+            }
+            .project-sort {
+                position: absolute;
+                right: 50px;
+                bottom: 10px;
+                display: flex;
+                justify-content: center;
+                .project-label {
+                    color: white;
+                    font-size: 1.5rem;
+                    margin-right: 5px;
+                }
+                #project-selector {
+                    border-radius: 15px;
+                    outline: 3px solid black;
+                    border: 0;
+                    font-size: .9rem;
+                    text-align: center;
+                }
+            }
         }
         .projects-container {
             display: flex;

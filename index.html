@@ -50,9 +50,21 @@
                 <sdiv class="burger-line"></span>
             </div>
             <div id="projects">
-                <h1 class="title">Projects</h1>
-                <div class="projects-container">
-                    <a class="project" href="https://rjuru.github.io/HTML_CSS_Reflection/" target="_blank">
+                <div class="projects-header">
+                    <h1 class="title">Projects</h1>
+                    <form class="project-sort" id="project-sort" name="projectSort" novalidate>
+                        <label for="project-selector" class="project-label">Sort</label>
+                        <select id="project-selector" class="project-dropdown">
+                            <option value="all" selected>All</option>
+                            <option value="css">CSS</option>
+                            <option value="html">HTML</option>
+                            <option value="php">PHP</option>
+                            <option value="js">JS</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="projects-container" id="projects-container">
+                    <a class="project html css" href="https://rjuru.github.io/HTML_CSS_Reflection/" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Images/NetMatters_Site.png" alt="NetMatters Project">
                         </div>
@@ -65,7 +77,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="project" href="#" target="_blank">
+                    <a class="project css html php js" href="#" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Images/project-preview.jpg" alt="NetMatters Project">
                         </div>
@@ -80,7 +92,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="project" href="#" target="_blank">
+                    <a class="project js" href="#" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Images/project-preview.jpg" alt="NetMatters Project">
                         </div>
@@ -92,7 +104,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="project" href="#" target="_blank">
+                    <a class="project css" href="#" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Images/project-preview.jpg" alt="NetMatters Project">
                         </div>
@@ -104,7 +116,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="project" href="#" target="_blank">
+                    <a class="project js" href="#" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Images/project-preview.jpg" alt="NetMatters Project">
                         </div>
@@ -116,7 +128,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="project" href="#" target="_blank">
+                    <a class="project html css php" href="#" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Images/project-preview.jpg" alt="NetMatters Project">
                         </div>
