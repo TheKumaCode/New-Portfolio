@@ -132,7 +132,7 @@ main {
             }
         }
     }
-    .closeModal {
+    .close-database {
         color: white;
         position: absolute;
         top: 10px;
@@ -141,13 +141,13 @@ main {
         font-weight: 600;
         cursor: pointer;
     }
-    .closeModal:hover,
-    .closeModal:focus {
+    .close-database:hover,
+    .close-database:focus {
     color: #999;
     text-decoration: none;
     cursor: pointer;
     }
-    .show-database {
+    .open-database {
         text-align: center;
         &:hover {
             cursor: pointer;

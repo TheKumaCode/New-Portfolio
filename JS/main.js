@@ -203,12 +203,14 @@ if (projectSelect != null) {
     })
 }
 
+const openDB = document.querySelector('.open-database')
+const closeDB = document.querySelector('.close-database')
+const modalDB = document.getElementById('myModal')
 
+openDB.addEventListener('click', () => {
+    modalDB.style.display = "block";
+})
 
-function openModal() {
-    document.getElementById("myModal").style.display = "block";
-}
-
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
+closeDB.addEventListener('click', () => {
+    modalDB.style.display = "none";
+})

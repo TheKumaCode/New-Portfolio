@@ -125,7 +125,7 @@ main .modal-content {
 main .modal-content .database-img {
   width: 100%;
 }
-main .closeModal {
+main .close-database {
   color: white;
   position: absolute;
   top: 10px;
@@ -134,16 +134,16 @@ main .closeModal {
   font-weight: 600;
   cursor: pointer;
 }
-main .closeModal:hover,
-main .closeModal:focus {
+main .close-database:hover,
+main .close-database:focus {
   color: #999;
   text-decoration: none;
   cursor: pointer;
 }
-main .show-database {
+main .open-database {
   text-align: center;
 }
-main .show-database:hover {
+main .open-database:hover {
   cursor: pointer;
   text-decoration: underline;
 }
