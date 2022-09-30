@@ -111,7 +111,7 @@ main .modal {
   top: 0;
   width: calc(100% - 200px);
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: black;
 }
 main .modal-content {
