@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Robertas Portfolio</title>
-        <link rel="stylesheet" href="../CSS/nav.css">
-        <link rel="stylesheet" href="../CSS/code-examples.css">
+        <link rel="stylesheet" href="../Assets/CSS/nav.css">
+        <link rel="stylesheet" href="../Assets/CSS/code-examples.css">
         <script src="https://kit.fontawesome.com/52d68163f3.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,9 +143,16 @@
                 </div>
             </div>
             <h2 class="sub-title">SQL Challenge</h2>
-            <div class="image-container">
-                <img src="../Images/movie-database.png" class="database-img">
+            <h3 onclick="openModal();currentSlide(1)" class="show-database">Show Database</h3>
+            <div id="myModal" class="modal">
+                <span class="closeModal" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <div class="mySlides">
+                        <img src="../Images/movie-database.png" class="database-img">
+                    </div>
+                </div>
             </div>
+
             <div class="code-container">
                 <div class="code-example" id="second-example">
                     <div class="header-bar languages">
@@ -178,7 +185,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="sql-ex-container">
                 <p class="q-obj">This queries objective is to get all the movies that are under the genre Adventure.</p>
                 <h4 class="code-line">SELECT mov_title AS "Movie Title", mov_year AS "Release Year" FROM movie</h4>
