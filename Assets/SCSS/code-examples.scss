@@ -95,8 +95,6 @@ main {
         text-align: center;
         margin-top: 30px;
     }
-
-
     .row {
         :after {
             content: "";
@@ -130,7 +128,7 @@ main {
             width: 90%;
             max-width: 1200px;
             .database-img {
-                max-width: 100%;
+                width: 100%;
             }
         }
     }

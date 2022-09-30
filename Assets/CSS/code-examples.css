@@ -123,7 +123,7 @@ main .modal-content {
   max-width: 1200px;
 }
 main .modal-content .database-img {
-  max-width: 100%;
+  width: 100%;
 }
 main .closeModal {
   color: white;
