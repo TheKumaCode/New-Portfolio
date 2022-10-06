@@ -274,10 +274,10 @@ main .open-database:hover {
 
 @media (max-width: 992px) {
   main {
-    margin-left: 100px;
+    margin-left: 150px;
   }
   main .modal {
-    width: calc(100% - 100px);
+    width: calc(100% - 150px);
   }
 }
 @media (max-width: 767px) {
