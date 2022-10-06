@@ -68,16 +68,6 @@ nav {
     border-right: 5px solid white;
     box-shadow: 0 0 10px $shadowDark;
     z-index: 2;
-    .close-btn {
-        font-size: 4rem;
-        color: red;
-        position: absolute;
-        bottom: 10px;
-        width: calc(100% - 5px);
-        text-align: center;
-        display: none;
-        cursor: pointer;
-    }
     .logo {
         text-align: center;
         padding: 15px 0px;
@@ -120,10 +110,48 @@ nav {
             }
         }
     }
+    .socials {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: 20px;
+        a {
+            font-size: 1.5rem;
+        }
+        .github {
+            i {
+                &:hover {
+                    color: #6cc644;
+                }
+            }
+        }
+        .linkedin {
+            i {
+                &:hover {
+                    color: #0085d2;
+                }
+            }
+        }
+    }
 }
+
+
 
 main {
     background: $colorSecondary;
+    position: relative;
+    .close-btn {
+        background: rgba(0 0 0 / 55%);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 150px;
+        z-index: 10;
+        display: none;
+        cursor: pointer;
+    }
     .burger-btn {
         display: none;
         position: fixed;
@@ -167,38 +195,13 @@ main {
 
 @media (max-width: 992px) {
     nav {
-        width: 100px;
-        .logo {
-            font-size: 2rem;
-        }
-        .nav {
-            li {
-                a {
-                    line-height: 2rem;
-                    font-size: 2rem;
-                    .nav-text {
-                        display: none;
-                    }
-                    &:hover {
-                        color: $colorPrimary;
-                        line-height: 2rem;
-                        font-size: 2rem;
-                    }
-                }
-                .icon {
-                    display: block;
-                }
-            }
-        }
+        width: 150px;
     }
 }
 
 @media (max-width: 767px) {
     nav {
         display: none;
-        .close-btn {
-            display: block;
-        }
     }
     main {
         margin-left: 0;
@@ -211,14 +214,20 @@ main {
 @media (min-width: 767px) {
     #nav {
         display: block !important;
-        .close-btn {
-            display: none;
-        }
     }
     main {
-        margin-left: 0;
         .burger-btn {
             display: none !important;
+        }
+        .close-btn {
+            display: none !important;
+        }
+    }
+    nav {
+        .socials {
+            a {
+                font-size: 2rem;
+            }
         }
     }
 }

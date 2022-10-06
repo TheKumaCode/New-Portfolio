@@ -60,16 +60,6 @@ nav {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
   z-index: 2;
 }
-nav .close-btn {
-  font-size: 4rem;
-  color: red;
-  position: absolute;
-  bottom: 10px;
-  width: calc(100% - 5px);
-  text-align: center;
-  display: none;
-  cursor: pointer;
-}
 nav .logo {
   text-align: center;
   padding: 15px 0px;
@@ -112,9 +102,37 @@ nav .nav li .nav-text {
 nav .nav li .icon {
   display: none;
 }
+nav .socials {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 20px;
+}
+nav .socials a {
+  font-size: 1.5rem;
+}
+nav .socials .github i:hover {
+  color: #6cc644;
+}
+nav .socials .linkedin i:hover {
+  color: #0085d2;
+}
 
 main {
   background: #c3cbe8;
+  position: relative;
+}
+main .close-btn {
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 150px;
+  z-index: 10;
+  display: none;
+  cursor: pointer;
 }
 main .burger-btn {
   display: none;
@@ -158,33 +176,12 @@ main .burger-btn .burger-line::after {
 
 @media (max-width: 992px) {
   nav {
-    width: 100px;
-  }
-  nav .logo {
-    font-size: 2rem;
-  }
-  nav .nav li a {
-    line-height: 2rem;
-    font-size: 2rem;
-  }
-  nav .nav li a .nav-text {
-    display: none;
-  }
-  nav .nav li a:hover {
-    color: #3b404f;
-    line-height: 2rem;
-    font-size: 2rem;
-  }
-  nav .nav li .icon {
-    display: block;
+    width: 150px;
   }
 }
 @media (max-width: 767px) {
   nav {
     display: none;
-  }
-  nav .close-btn {
-    display: block;
   }
   main {
     margin-left: 0;
@@ -197,13 +194,13 @@ main .burger-btn .burger-line::after {
   #nav {
     display: block !important;
   }
-  #nav .close-btn {
-    display: none;
-  }
-  main {
-    margin-left: 0;
-  }
   main .burger-btn {
     display: none !important;
+  }
+  main .close-btn {
+    display: none !important;
+  }
+  nav .socials a {
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=nav.css.map */

@@ -1,5 +1,3 @@
-console.log("Hello World!");
-
 var i = 0
 var intro = "Hi, I'm Robertas"
 var bio = "I'm a developer."
@@ -45,6 +43,7 @@ function typeBio() {
 navBtn.addEventListener('click', () => {
     document.querySelector('#nav').style.display = 'block';
     navBtn.style.display = 'none';
+    closeNav.style.display = "block";
 });
 
 //Check for when the close button is clicked
@@ -53,6 +52,7 @@ navBtn.addEventListener('click', () => {
 closeNav.addEventListener('click', () => {
     document.querySelector('#nav').style.display = 'none';
     navBtn.style.display = 'block';
+    closeNav.removeAttribute('style');
 });
 
 
@@ -63,7 +63,7 @@ const form = document.getElementById('contact-form');
 
 if (form != null) {
     form.addEventListener('submit', (e) => {
-        const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/ ;
+        const regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/ ;
 
         if (firstName.value === '' || firstName.value == null) {
             firstName.style.outline = "3px solid red";
@@ -182,6 +182,15 @@ if (projectSelect != null) {
                 }
             }
         }
+        if (selectedProject == "sql") {
+            for (i = 0; i < project.length; i++) {
+                if (!project[i].classList.contains("sql")) {
+                    project[i].style["display"] = 'none'
+                } else {
+                    project[i].style["display"] = 'block'
+                }
+            }
+        }
         if (selectedProject == "php") {
             for (i = 0; i < project.length; i++) {
                 if (!project[i].classList.contains("php")) {
@@ -203,14 +212,19 @@ if (projectSelect != null) {
     })
 }
 
+
+
 const openDB = document.querySelector('.open-database')
 const closeDB = document.querySelector('.close-database')
 const modalDB = document.getElementById('myModal')
 
-openDB.addEventListener('click', () => {
-    modalDB.style.display = "block";
-})
 
-closeDB.addEventListener('click', () => {
-    modalDB.style.display = "none";
-})
+if (openDB !== null) {
+    openDB.addEventListener('click', () => {
+        modalDB.style.display = "block";
+    })
+    
+    closeDB.addEventListener('click', () => {
+        modalDB.style.display = "none";
+    })
+}

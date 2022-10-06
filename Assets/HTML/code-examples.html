@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Robertas Portfolio</title>
-        <link rel="stylesheet" href="../Assets/CSS/nav.css">
-        <link rel="stylesheet" href="../Assets/CSS/code-examples.css">
+        <link rel="icon" href="../Images/Code.svg">
+        <link rel="stylesheet" href="../CSS/nav.css">
+        <link rel="stylesheet" href="../CSS/code-examples.css">
         <script src="https://kit.fontawesome.com/52d68163f3.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,27 +14,31 @@
     </head>
     <body>
         <nav id="nav">
-            <h1 class="logo"><a href="../index.html#banner">RV</a></h1>
+            <h1 class="logo"><a href="../../index.html#banner">RV</a></h1>
             <ul class="nav">
                 <li>
-                    <a href="../HTML/about.html"><h3 class="nav-text">About</h3><i class="fa-solid fa-address-card icon"></i></a>
+                    <a href="../HTML/about.html"><h3 class="nav-text">About</h3></a>
                 </li>
                 <li>
-                    <a href="../index.html#projects"><h3 class="nav-text">Projects</h3><i class="fa-solid fa-diagram-project icon"></i></a>
+                    <a href="../../index.html#projects"><h3 class="nav-text">Projects</h3></a>
                 </li>
                 <li>
-                    <a href="../HTML/code-examples.html"><h3 class="nav-text">Code</h3><i class="fa-solid fa-code icon"></i></a>
+                    <a href="../HTML/code-examples.html"><h3 class="nav-text">Code</h3></a>
                 </li>
                 <li>
-                    <a href="../HTML/scs.html"><h3 class="nav-text">SCS</h3><i class="fa-solid fa-school icon"></i></a>
+                    <a href="../HTML/scs.html"><h3 class="nav-text">SCS</h3></a>
                 </li>
                 <li>
-                    <a href="../index.html#contact"><h3 class="nav-text">Contact</h3><i class="fa-solid fa-address-book icon"></i></a>
+                    <a href="../../index.html#contact"><h3 class="nav-text">Contact</h3></a>
                 </li>
             </ul>
-            <h1 class="close-btn">X</h1>
+            <div class="socials">
+                <span class="github"><a href="https://github.com/RJURU"><i class="fa-brands fa-square-github"></i></a></span>
+                <span class="linkedin"><a href="https://www.linkedin.com/in/robertas-vildziunas-493b51230/"><i class="fa-brands fa-linkedin"></i></a></span>
+            </div>
         </nav>
         <main>
+            <div class="close-btn"></div>
             <div id="show-nav">
                 <div class="burger-btn">
                     <div class="burger-line"></div>
@@ -114,7 +119,7 @@
     }
                     </code></pre>
                 <pre><code class="code-html">
-    &lt;form accept="utf-8" class="preview-form" id="preview-form" name="previewForm" novalidate&gt;
+    &lt;form class="preview-form" id="preview-form" name="previewForm" novalidate&gt;
         &lt;div class="col-2"&gt;
             &lt;label for="email" class="required email">Email&lt;/label &gt;
             &lt;input type="email" class="form-control" id="email" name="email"&gt;
@@ -130,7 +135,7 @@
                         <p class="preview-title">Preview</p> 
                     </div>
                     <div class="preview-container">
-                        <form accept="utf-8" class="preview-form" id="preview-form" name="previewForm" novalidate>
+                        <form class="preview-form" id="preview-form" name="previewForm" novalidate>
                             <div class="col-2">
                                 <label for="email" class="required email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email">
@@ -148,7 +153,7 @@
                 <span class="close-database">&times;</span>
                 <div class="modal-content">
                     <div class="mySlides">
-                        <img src="../Images/movie-database.png" class="database-img">
+                        <img src="../Images/movie-database.png" class="database-img" alt="Image of the database structure.">
                     </div>
                 </div>
             </div>
