@@ -323,6 +323,16 @@ main .open-database:hover {
   main {
     margin-left: 0;
   }
+  main .modal {
+    width: 100%;
+  }
+  main .open-database {
+    top: -30px;
+    right: calc(50% - 60px);
+    left: calc(50% - 60px);
+  }
+}
+@media (max-width: 992px) {
   main .code-example-container {
     flex-direction: column;
     padding: 0px;
@@ -347,13 +357,5 @@ main .open-database:hover {
   }
   main .code-example-container .code-preview .header-bar {
     width: 100%;
-  }
-  main .modal {
-    width: 100%;
-  }
-  main .open-database {
-    top: -30px;
-    right: calc(50% - 60px);
-    left: calc(50% - 60px);
   }
 }/*# sourceMappingURL=code-examples.css.map */
