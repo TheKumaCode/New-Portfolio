@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     </head>
     <body>
         <nav id="nav">
@@ -46,14 +47,27 @@
             </div>
             <h1 class="title" style="text-align: center;">Coding Examples</h1>
             <h2 class="sub-title">Form Validation</h2>
-            <div class="code-container">
-                <div class="code-example" id="first-example">
-                    <div class="header-bar languages">
-                        <p class="language html">HTML</p>
-                        <p class="language scss">SCSS</p>
-                        <p class="language js selected">JS</p>
+            <div class="code-example-container">
+                <div class="code-explanation">
+                    <div class="header-bar preview">
+                        <p class="preview-title">Explanation</p> 
                     </div>
-                    <pre><code class="code-js open">
+                    <div class="explanation-container">
+                        This code takes the email from the input once the submit button is clicked and passes it through a regex, if it doesn't pass the regex then it stops the form from submitting and gives the input a class that shows the user that there is an error. <br>
+                        <br>
+                        A regex is an expression that checks over a string under a specific set of rules, rules that include characters contained, in what order they are contained, how many of them are in a row, etx.  <br>
+                        <br>
+                        If the regex passes it removes the class that shows the user that there is an error, and submits the form.
+                    </div>
+                </div>
+                <div class="code-container">
+                        <div class="code-example" id="first-example">
+                            <div class="header-bar languages">
+                                <p class="language html">HTML</p>
+                                <p class="language scss">SCSS</p>
+                                <p class="language js selected">JS</p>
+                            </div>
+                            <pre><code class="code-js open language-js">
     const previewForm = document.getElementById('preview-form');
     const email = document.getElementById('email');
 
@@ -69,8 +83,8 @@
             email.removeAttribute("style");
         }
     });
-                        </code></pre>
-                    <pre><code class="code-scss">
+                                </code></pre>
+                            <pre><code class="code-scss language-scss">
     $colorPrimary: #3b404f;
     $colorSecondary: #c3cbe8;
     $shadowDark: rgba(0 0 0 / 75%);
@@ -117,9 +131,9 @@
             }
         }
     }
-                    </code></pre>
-                <pre><code class="code-html">
-    &lt;form class="preview-form" id="preview-form" name="previewForm" novalidate&gt;
+                            </code></pre>
+                        <pre><code class="code-html language-html">
+    &lt;form method="post" class="preview-form" id="preview-form" name="previewForm" novalidate&gt;
         &lt;div class="col-2"&gt;
             &lt;label for="email" class="required email">Email&lt;/label &gt;
             &lt;input type="email" class="form-control" id="email" name="email"&gt;
@@ -128,27 +142,27 @@
             &lt;button name="submit" class="btn">Submit&lt;/button&gt;
         &lt;/div&gt;
     &lt;/form&gt;
-                </code></pre>
-                </div>
-                <div class="code-preview">
-                    <div class="header-bar preview">
-                        <p class="preview-title">Preview</p> 
-                    </div>
-                    <div class="preview-container">
-                        <form class="preview-form" id="preview-form" name="previewForm" novalidate>
-                            <div class="col-2">
-                                <label for="email" class="required email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                        </code></pre>
+                        </div>
+                        <div class="code-preview">
+                            <div class="header-bar preview">
+                                <p class="preview-title">Preview</p> 
                             </div>
-                            <div class="submit-btn-container">
-                                <button name="submit" class="btn">Submit</button>
+                            <div class="preview-container">
+                                <form method="post" class="preview-form" id="preview-form" name="previewForm" novalidate>
+                                    <div class="col-2">
+                                        <label for="email" class="required email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="submit-btn-container">
+                                        <button name="submit" class="btn">Submit</button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
+                        </div>
                 </div>
             </div>
             <h2 class="sub-title">SQL Challenge</h2>
-            <h3 class="open-database">Show Database</h3>
             <div id="myModal" class="modal">
                 <span class="close-database">&times;</span>
                 <div class="modal-content">
@@ -157,69 +171,80 @@
                     </div>
                 </div>
             </div>
-
-            <div class="code-container">
-                <div class="code-example" id="second-example">
-                    <div class="header-bar languages">
-                        <p class="language sql selected">SQL</p>
-                    </div>
-                    <pre><code class="code-sql open">
-    SELECT mov_title AS "Movie Title", mov_year AS "Release Year" FROM movie
-    WHERE mov_id IN 
-        (SELECT mov_id FROM movie_genres 
-        WHERE gen_id IN 
-            (SELECT gen_id FROM genres 
-            WHERE gen_title = 'Adventure')
-        ) 
-    ORDER BY mov_year DESC;
-                        </code></pre>
-                </div>
-                <div class="code-preview">
+            <div class="code-example-container">
+                <div class="code-explanation">
                     <div class="header-bar preview">
-                        <p class="preview-title">Output</p> 
+                        <p class="preview-title">Explanation</p> 
+                        <h3 class="open-database">Database</h3>
                     </div>
-                    <div class="preview-container">
-                        <div class="grid">
-                            <div class="grid-item-1 grid-col-1 grid-title">Movie Title</div>
-                            <div class="grid-item-2 grid-col-2 grid-title">Release Year</div>
-                            <div class="grid-item-3 grid-col-1 grid-val">Deliverance</div>
-                            <div class="grid-item-4 grid-col-2 grid-val">1972</div>
-                            <div class="grid-item-5 grid-col-1 grid-val">Lawrence of Arabia</div>
-                            <div class="grid-item-6 grid-col-2 grid-val">1962</div>
+                    <div class="explanation-container">
+                        <div class="sql-ex-container">
+                            <p class="q-obj">This queries objective is to get all the movies that are under the genre Adventure.</p>
+                            <h4 class="code-line">SELECT mov_title AS "Movie Title", mov_year AS "Release Year" FROM movie</h4>
+                            <p class="code-breakdown">
+                                This line of code, selects the columns <strong>mov_title</strong> and <strong>mov_year</strong> from the 
+                                <strong>movie</strong> table in the database, and gives each of them an alias ("Movie Title" and "Release Year" 
+                                respectively), for easier readability. Selecting a column means that it will be displayed in the output of 
+                                the query.
+                            </p>
+                            <h4 class="code-line">WHERE mov_id IN (SELECT mov_id FROM movie_genres .....</h4>
+                            <p class="code-breakdown">
+                                This line of code is a subquery to the previous line of code, which further narrows the search down. It does 
+                                this by clarifying that the value of <strong>mov_id</strong> in the previous line has to be the same as the value
+                                in the subquery. In this case the same as the value of <strong>mov_id</strong> in the table 
+                                <strong>movie_genres</strong>.
+                            </p>
+                            <h4 class="code-line">WHERE gen_id IN (SELECT gen_id FROM genres WHERE gen_title = 'Adventure') </h4>
+                            <p class="code-breakdown">
+                                This is the subquery that is placed within the previous subquery to even further narrow the search, since the value
+                                is unknown by the previous subquery. This subquery clarifies to the previous subquery that the value of 
+                                <strong>gen_id</strong> needs the be that same as the value of <strong>gen_id</strong> in the table 
+                                <strong>genres</strong> where value attached to the the <strong>gen_title</strong> equals to the text "Adventure".
+                            </p>
+                            <h4 class="code-line">ORDER BY mov_year DESC;</h4>
+                            <p class="code-breakdown">
+                                This line of code orders the output of the query in descending order of the value <strong>mov_year</strong>. 
+                                Meaning from the newest to the oldest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <div class="code-example" id="second-example">
+                        <div class="header-bar languages">
+                            <p class="language sql selected">SQL</p>
+                        </div>
+                        <pre><code class="code-sql open language-sql">
+        SELECT mov_title AS "Movie Title", mov_year AS "Release Year" FROM movie
+        WHERE mov_id IN 
+            (SELECT mov_id FROM movie_genres 
+            WHERE gen_id IN 
+                (SELECT gen_id FROM genres 
+                WHERE gen_title = 'Adventure')
+            ) 
+        ORDER BY mov_year DESC;
+                            </code></pre>
+                    </div>
+                    <div class="code-preview">
+                        <div class="header-bar preview">
+                            <p class="preview-title">Output</p> 
+                        </div>
+                        <div class="preview-container">
+                            <div class="grid">
+                                <div class="grid-item-1 grid-col-1 grid-title">Movie Title</div>
+                                <div class="grid-item-2 grid-col-2 grid-title">Release Year</div>
+                                <div class="grid-item-3 grid-col-1 grid-val">Deliverance</div>
+                                <div class="grid-item-4 grid-col-2 grid-val">1972</div>
+                                <div class="grid-item-5 grid-col-1 grid-val">Lawrence of Arabia</div>
+                                <div class="grid-item-6 grid-col-2 grid-val">1962</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sql-ex-container">
-                <p class="q-obj">This queries objective is to get all the movies that are under the genre Adventure.</p>
-                <h4 class="code-line">SELECT mov_title AS "Movie Title", mov_year AS "Release Year" FROM movie</h4>
-                <p class="code-breakdown">
-                    This line of code, selects the columns <strong>mov_title</strong> and <strong>mov_year</strong> from the 
-                    <strong>movie</strong> table in the database, and gives each of them an alias ("Movie Title" and "Release Year" 
-                    respectively), for easier readability. Selecting a column means that it will be displayed in the output of 
-                    the query.
-                </p>
-                <h4 class="code-line">WHERE mov_id IN (SELECT mov_id FROM movie_genres .....</h4>
-                <p class="code-breakdown">
-                    This line of code is a subquery to the previous line of code, which further narrows the search down. It does 
-                    this by clarifying that the value of <strong>mov_id</strong> in the previous line has to be the same as the value
-                    in the subquery. In this case the same as the value of <strong>mov_id</strong> in the table 
-                    <strong>movie_genres</strong>.
-                </p>
-                <h4 class="code-line">WHERE gen_id IN (SELECT gen_id FROM genres WHERE gen_title = 'Adventure') </h4>
-                <p class="code-breakdown">
-                    This is the subquery that is placed within the previous subquery to even further narrow the search, since the value
-                    is unknown by the previous subquery. This subquery clarifies to the previous subquery that the value of 
-                    <strong>gen_id</strong> needs the be that same as the value of <strong>gen_id</strong> in the table 
-                    <strong>genres</strong> where value attached to the the <strong>gen_title</strong> equals to the text "Adventure".
-                </p>
-                <h4 class="code-line">ORDER BY mov_year DESC;</h4>
-                <p class="code-breakdown">
-                    This line of code orders the output of the query in descending order of the value <strong>mov_year</strong>. 
-                    Meaning from the newest to the oldest.
-                </p>
-            </div>
         </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
         <script src="../JS/main.js"></script>
     </body>
 </html>

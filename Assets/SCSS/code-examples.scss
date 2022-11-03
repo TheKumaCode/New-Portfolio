@@ -6,10 +6,63 @@ main {
     margin-left: 200px;
     min-height: 100vh;
     padding-bottom: 20px;
-    .code-container {
-        margin: 20px;
-        display: flex;
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #93a6e8;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #3b404f;
+        &:hover {
+            background: #252932;
+        }
+    }
+    ::-webkit-scrollbar-corner {
+        background: #93a6e8;
+    }
+    pre code.hljs {
+        padding: 0;
+    }
+    .code-example-container {
+        display: inline-flex;
         flex-direction: row;
+        max-width: 100%;
+        // padding-right: 20px;
+    }
+    .code-explanation {
+        min-width: 50%;
+        max-width: 50%;
+        padding: 20px 0px 20px 20px;
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background: #3b404f;
+            height: 30px;
+            text-align: center;
+            &.preview {
+                justify-content: space-evenly;
+                line-height: 28px;
+                margin-bottom: 0;
+                position: relative;
+            }
+        }
+        .explanation-container {
+            width: 100%;
+            background: white;
+            height: 430px;
+            overflow-y: scroll;
+            padding: 10px;
+            position: relative;
+        }
+    }
+    .code-container {
+        padding: 20px 20px 20px 0px;
+        display: flex;
+        flex-direction: column;
+        min-width: 50%;
+        max-width: 50%;
         .header-bar {
             display: flex;
             justify-content: space-between;
@@ -36,37 +89,20 @@ main {
             }
         }
         .code-example {
-            min-width: 50%;
-            max-width: 50%;
+            min-width: 100%;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             pre {
                 width: 100%;
                 margin: 0;
-                ::-webkit-scrollbar {
-                    width: 10px;
-                }
-                ::-webkit-scrollbar-track {
-                    background: #93a6e8;
-                }
-                ::-webkit-scrollbar-thumb {
-                    background: #3b404f;
-                    &:hover {
-                        background: #252932;
-                    }
-                }
                 code {
                     display: none;
                     background: rgb(46, 45, 45);
                     color: white;
                     font-size: 0.9rem;
-                    height: 400px;
-                    overflow-x: scroll;
-                    overflow-y: hidden;
-                    &.code-scss {
-                        overflow-y: scroll;
-                        overflow-x: hidden;
-                    }
+                    height: 200px;
+                    overflow: scroll;
                     &.open {
                         display: block;
                     }
@@ -80,7 +116,7 @@ main {
             .preview-container {
                 background: white;
                 width: 100%;
-                height: 400px;
+                height: 200px;
             }
             .header-bar {
                 .preview-title {
@@ -148,6 +184,10 @@ main {
     cursor: pointer;
     }
     .open-database {
+        position: absolute; 
+        height: 30px;
+        width: 120px;
+        right: -60px;
         text-align: center;
         &:hover {
             cursor: pointer;
@@ -249,7 +289,7 @@ main {
 }
 
 .sql-ex-container {
-    margin: 10px 20px;
+    margin: 0px 10px;
     .q-obj {
         text-align: center;
         font-size: 1.2rem;
@@ -287,8 +327,21 @@ main {
 @media (max-width: 767px) {
     main {
         margin-left: 0;
-        .code-container {
+        .code-example-container {
             flex-direction: column;
+            padding: 0px;
+            .code-explanation {
+                min-width: calc(100% - 40px);
+                max-width: calc(100% - 40px);
+                margin: 20px 20px 0px 20px;
+                padding: 0px;
+            }
+            .code-container {
+                min-width: calc(100% - 40px);
+                max-width: calc(100% - 40px);
+                margin: 0px 20px 20px 20px;
+                padding: 0px;
+            }
             .code-example {
                 min-width: 100%;
             }
@@ -303,6 +356,11 @@ main {
         }
         .modal {
             width: 100%;
+        }
+        .open-database {
+            top: -30px;
+            right: calc(50% - 60px);
+            left: calc(50% - 60px);
         }
     }
 }
