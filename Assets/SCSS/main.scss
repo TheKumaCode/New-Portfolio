@@ -364,24 +364,36 @@ main {
                 &::after {
                     content: "*";
                     font-size: 1.1rem;
-                    color: white;
+                    color: red;
                 }
                 &.noFirstName {
                     &::after {
                         content: "* First Name Required";
-                        color: red;
                     }
                 }
                 &.noEmail {
                     &::after {
-                        content: "* Invalid Email Address";
-                        color: red;
+                        content: "* Email is required.";
+                    }
+                }
+                &.badEmail {
+                    &::after {
+                        content: "* Invalid Email.";
+                    }
+                }
+                &.noSubject {
+                    &::after {
+                        content: "* Subject is required."
                     }
                 }
                 &.noMessage {
                     &::after {
-                        content: "* Message Field Empty";
-                        color: red;
+                        content: "* Message is required.";
+                    }
+                }
+                &.badMessage {
+                    &::after {
+                        content: "* Message too short. (5 char min.)";
                     }
                 }
             }
@@ -406,6 +418,33 @@ main {
                         box-shadow: inset 0 0 1px 1px $shadowDark;
                     }
                     @include focus;
+                }
+            }
+            .php-errors {
+                margin-top: 5px;
+                .error_message {
+                    text-align: center;
+                    color: white;
+                    padding: 5px 10px;
+                    margin-top: 5px;
+                    border-radius: 15px;
+                    background: rgb(226, 13, 13);
+                    &.success {
+                        background: rgb(13, 226, 52);
+                    }
+                    .err_close {
+                        float: right;
+                        font-size: 21px;
+                        opacity: .2;
+                        color: black;
+                        font-weight: 700;
+                        line-height: 1.2;
+                        cursor: pointer;
+                        user-select: none;
+                        &:hover {
+                            opacity: .5;
+                        }
+                    }
                 }
             }
         }

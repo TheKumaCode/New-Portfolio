@@ -353,19 +353,25 @@ main #projects .projects-container .project:focus {
 #contact .contact-col .contact-form .required::after {
   content: "*";
   font-size: 1.1rem;
-  color: white;
+  color: red;
 }
 #contact .contact-col .contact-form .required.noFirstName::after {
   content: "* First Name Required";
-  color: red;
 }
 #contact .contact-col .contact-form .required.noEmail::after {
-  content: "* Invalid Email Address";
-  color: red;
+  content: "* Email is required.";
+}
+#contact .contact-col .contact-form .required.badEmail::after {
+  content: "* Invalid Email.";
+}
+#contact .contact-col .contact-form .required.noSubject::after {
+  content: "* Subject is required.";
 }
 #contact .contact-col .contact-form .required.noMessage::after {
-  content: "* Message Field Empty";
-  color: red;
+  content: "* Message is required.";
+}
+#contact .contact-col .contact-form .required.badMessage::after {
+  content: "* Message too short. (5 char min.)";
 }
 #contact .contact-col .contact-form textarea {
   height: 200px;
@@ -392,6 +398,36 @@ main #projects .projects-container .project:focus {
 #contact .contact-col .contact-form .submit-btn-container .btn:focus {
   outline: 5px solid white !important;
   box-shadow: 0 0 10px white !important;
+}
+#contact .contact-col .contact-form .php-errors {
+  margin-top: 5px;
+}
+#contact .contact-col .contact-form .php-errors .error_message {
+  text-align: center;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+  background: rgb(226, 13, 13);
+}
+#contact .contact-col .contact-form .php-errors .error_message.success {
+  background: rgb(13, 226, 52);
+}
+#contact .contact-col .contact-form .php-errors .error_message .err_close {
+  float: right;
+  font-size: 21px;
+  opacity: 0.2;
+  color: black;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#contact .contact-col .contact-form .php-errors .error_message .err_close:hover {
+  opacity: 0.5;
 }
 
 @media (max-width: 992px) {

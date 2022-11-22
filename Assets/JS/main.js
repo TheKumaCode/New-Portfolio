@@ -6,14 +6,6 @@ const navBtn = document.querySelector('.burger-btn')
 const closeNav = document.querySelector('.close-btn')
 const bannerContent = document.querySelector('.banner-content')
 
-//Checks if there is content in the banner to prevent the code from runnin on other pages
-//Listens for when the page loads
-//If loop that checks if there is any text left in the intro var
-//Adds the letter to the end of the intro string and adds it to the html
-//Adds 1 to the i value to move up 1 letter in the intro string
-//Short pause to emmulate typing then calls itself
-//After it's finished it calls the next function 
-
 if (bannerContent != null) {
     addEventListener('load', function typeIntro() {
         if (i < intro.length) {
@@ -27,7 +19,7 @@ if (bannerContent != null) {
     });
 }
 
-//After it's called it repeats what the previous one did right after the previous one finishes.
+
 
 function typeBio() {
     if (i < bio.length) {
@@ -37,8 +29,7 @@ function typeBio() {
     }
 };
 
-//Check for when the nav button is clicked
-//Show the nav and hide the nav button
+
 
 navBtn.addEventListener('click', () => {
     document.querySelector('#nav').style.display = 'block';
@@ -46,8 +37,7 @@ navBtn.addEventListener('click', () => {
     closeNav.style.display = "block";
 });
 
-//Check for when the close button is clicked
-//Hide the nav and show the nav button
+
 
 closeNav.addEventListener('click', () => {
     document.querySelector('#nav').style.display = 'none';
@@ -59,11 +49,12 @@ closeNav.addEventListener('click', () => {
 const firstName = document.getElementById('first-name');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
+const subject = document.getElementById('subject');
 const form = document.getElementById('contact-form');
 
 if (form != null) {
     form.addEventListener('submit', (e) => {
-        const regex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/ ;
+        const regex = /^([a-zA-Z\d\.-]+)@([a-zA-Z\d-]+)\.([a-zA-Z]{2,8})(\.[a-zA-Z]{2,8})?$/ ;
 
         if (firstName.value === '' || firstName.value == null) {
             firstName.style.outline = "3px solid red";
@@ -73,22 +64,40 @@ if (form != null) {
             document.querySelector('.firstName').classList.remove('noFirstName')
             firstName.removeAttribute("style");
         }
-
-        if (!email.value.match(regex)) {
+        if(email.value == "" || email.value == null) {
             email.style.outline = "3px solid red";
-            document.querySelector('.email').classList.add('noEmail')
-            e.preventDefault()
+            document.querySelector('.email').classList.add('noEmail');
+            e.preventDefault();
+        } else if (!email.value.match(regex)) {
+            email.style.outline = "3px solid red";
+            document.querySelector('.email').classList.add('badEmail')
+            e.preventDefault();
         } else {
-            document.querySelector('.email').classList.remove('noEmail')
+            document.querySelector('.email').classList.remove('noEmail');
+            document.querySelector('.email').classList.remove('badEmail');
             email.removeAttribute("style");
+        }
+
+        if (subject.value === '' || subject.value == null) {
+            subject.style.outline = "3px solid red";
+            document.querySelector('.form-subject').classList.add('noSubject');
+            e.preventDefault();
+        } else {
+            document.querySelector('.form-subject').classList.remove('noSubject');
+            subject.removeAttribute("style");
         }
 
         if (message.value === '' || message.value == null) {
             message.style.outline = "3px solid red";
-            document.querySelector('.message').classList.add('noMessage')
-            e.preventDefault()
+            document.querySelector('.message').classList.add('noMessage');
+            e.preventDefault();
+        } else if (message.value.length < 5) {
+            message.style.outline = "3px solid red";
+            document.querySelector('.message').classList.add('badMessage');
+            e.preventDefault();
         } else {
-            document.querySelector('.message').classList.remove('noMessage')
+            document.querySelector('.message').classList.remove('noMessage');
+            document.querySelector('.message').classList.remove('badMessage');
             message.removeAttribute("style");
         }
     });
@@ -99,7 +108,7 @@ const previewForm = document.getElementById('preview-form');
 
 if (previewForm != null) {
     previewForm.addEventListener('submit', (e) => {
-        const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/ ;
+        const regex = /^([a-zA-Z\d\.-]+)@([a-zA-Z\d-]+)\.([a-zA-Z]{2,8})(\.[a-zA-Z]{2,8})?$/ ;
 
         if (!email.value.match(regex)) {
             email.style.outline = "3px solid red";
@@ -228,3 +237,9 @@ if (openDB !== null) {
         modalDB.style.display = "none";
     })
 }
+
+const close = document.querySelectorAll('.err_close');
+
+close.forEach((e) => e.addEventListener('click', () => {
+    e.parentElement.remove();
+}))

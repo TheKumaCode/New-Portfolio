@@ -1,3 +1,71 @@
+<?php
+    include_once './Assets/PHP/database.php';
+
+    if(!isset($fname)) {
+        $name = "";
+    }
+    if(!isset($lname)) {
+        $name = "";
+    }
+    if(!isset($email)) {
+        $email = "";
+    }
+    if(!isset($subject)) {
+        $subject = "";
+    }
+    if(!isset($message)) {
+        $message = "";
+    }
+    if(!isset($success)) {
+        $success = null;
+    }
+    
+
+
+    $fname = filter_input(INPUT_POST, 'first-name');
+    $lname = filter_input(INPUT_POST, 'last-name');
+    $email = filter_input(INPUT_POST, 'email');
+    $subject = filter_input(INPUT_POST, 'subject');
+    $message = filter_input(INPUT_POST, 'message');
+
+
+    if(empty($fname)) {
+        $err_name = "Name is required.";
+    }
+
+    if(empty($email)) {
+        $err_email = "Email is required.";
+    } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $err_email = "Email is invalid.";
+    }
+
+    if(empty($subject)) {
+        $err_subject = "Subject is required.";
+    }
+
+    if(empty($message)) {
+        $err_message = "Message is required.";
+    } elseif(strlen($message) < 5) {
+        $err_message = "Message needs to be at least 5 characters.";
+    }
+
+    if(isset($_POST['submit']) && empty($err_name) && empty($err_email) && empty($err_subject) && empty($err_message)) {
+
+        $submit = "INSERT INTO `Contact`(`Contact_FName`, `Contact_LName`, `Contact_Email`, `Contact_Subject`, `Contact_Message`) VALUES ('{$fname}','{$lname}','{$email}','{$subject}','{$message}')";
+        $connect->query($submit);
+
+        $fname = "";
+        $lname = "";
+        $email = "";
+        $subject = "";
+        $message = "";
+
+
+        $success = "Successfully sent the message.";
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -164,15 +232,15 @@
                     </div>
                 </div>
                 <div class="contact-col">
-                    <form method="post" class="contact-form" id="contact-form" name="contactForm" novalidate>
+                    <form action="./index.php#contact" method="post" class="contact-form" id="contact-form" name="contactForm" novalidate>
                         <div class="name">
                             <div class="col-1">
                                 <label for="first-name" class="required firstName">First Name</label>
-                                <input type="text" class="form-control" id="first-name" name="first name">
+                                <input type="text" class="form-control" id="first-name" name="first-name">
                             </div>
                             <div class="col-1">
                                 <label for="last-name">Last Name</label>
-                                <input type="text" class="form-control" id="last-name" name="last name">
+                                <input type="text" class="form-control" id="last-name" name="last-name">
                             </div>
                         </div>
                         <div class="col-2">
@@ -180,15 +248,30 @@
                             <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="col-2">
-                            <label for="subject">Subject</label>
-                            <input type="text" class="form-control" id="subject" name="emailsubject">
+                            <label for="subject" class="required form-subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject">
                         </div>
                         <div class="col-2">
                             <label for="message" class="required message">Message</label>
-                            <textarea class="form-control" id="message" name="emailmessage"></textarea>
+                            <textarea class="form-control" id="message" name="message"></textarea>
                         </div>
                         <div class="submit-btn-container">
                             <button name="submit" class="btn">Submit</button>
+                        </div>
+                        <div class="php-errors">
+                            <?php if(isset($_POST['submit'])){ 
+                                if(isset($err_name)) { ?>
+                                    <div class="error_message"><? echo $err_name; ?><div class="err_close">×</div></div>
+                                <?php } elseif (isset($err_email)) { ?>
+                                    <div class="error_message"><?php echo $err_email; ?><div class="err_close">×</div></div>
+                                <?php } elseif (isset($err_subject)) { ?>
+                                    <div class="error_message"><?php echo $err_subject; ?><div class="err_close">×</div></div>
+                                <?php } elseif (isset($err_message)) { ?>
+                                    <div class="error_message"><?php echo $err_message; ?><div class="err_close">×</div></div>
+                                <?php } elseif (isset($success) ) { ?>
+                                    <div class="error_message success"><?php echo $success; ?><div class="err_close">×</div></div>
+                                <?php } 
+                            } ?>
                         </div>
                     </form>
                 </div>
