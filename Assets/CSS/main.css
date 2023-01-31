@@ -306,9 +306,14 @@ main #projects .projects-container .project:focus {
 #contact .contact-col .contact-info p {
   margin-bottom: 5px;
 }
-#contact .contact-col .contact-info span {
+#contact .contact-col .contact-info a {
   margin-top: 5px;
-  margin-bottom: 5px;
+}
+#contact .contact-col .contact-info a:hover {
+  text-decoration: underline;
+}
+#contact .contact-col .contact-info h3 {
+  margin-top: 10px;
 }
 #contact .contact-col .contact-form {
   display: flex;

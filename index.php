@@ -172,14 +172,14 @@
                     <div class="contact-info">
                         <h2>Contact</h2>
                         <p>If you would like to get in touch, ask questions about the projects, or would like to know more about me, you can contact me via</p>
-                        <span class="contact-phone">
+                        <a class="contact-phone" href="phoneto: 07467527354">
                             <i class="fa-solid fa-phone"></i>
                             07467527354
-                        </span> <br>
-                        <span class="contact-email">
+                        </a>
+                        <a class="contact-email" href="mailto: thisisreal.email@gmail.com">
                             <i class="fa-solid fa-envelope"></i>
                             thisisreal.email@gmail.com
-                        </span>
+                        </a>
                         <h3>Alternatively you can simply fill in this form...</h3>
                     </div>
                 </div>
