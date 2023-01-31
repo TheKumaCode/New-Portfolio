@@ -72,7 +72,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Robertas Portfolio</title>
-        <link rel="icon" href="Assets/Images/Home.svg">
+        <meta name="description" content="My previous projects and contact.">
+        <link rel="icon" href="Assets/Images/favicon.ico">
         <link rel="stylesheet" href="Assets/CSS/main.css">
         <link rel="stylesheet" href="Assets/CSS/nav.css">
         <script src="https://kit.fontawesome.com/52d68163f3.js" crossorigin="anonymous"></script>
@@ -101,8 +102,8 @@
                 </li>
             </ul>
             <div class="socials">
-                <span class="github"><a href="https://github.com/RJURU"><i class="fa-brands fa-square-github"></i></a></span>
-                <span class="linkedin"><a href="https://www.linkedin.com/in/robertas-vildziunas-493b51230/"><i class="fa-brands fa-linkedin"></i></a></span>
+                <span class="github"><a href="https://github.com/RJURU" target="_blank"><i class="fa-brands fa-square-github"></i></a></span>
+                <span class="linkedin"><a href="https://www.linkedin.com/in/robertas-vildziunas-493b51230/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></span>
             </div>
         </nav>
         <main>
@@ -137,7 +138,7 @@
                     </form>
                 </div>
                 <div class="projects-container" id="projects-container">
-                    <a class="project html css js" href="https://netmatters.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
+                    <a class="project php css js sql" href="https://netmatters.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Assets/Images/NetMatters_Site.png" alt="NetMatters Project">
                         </div>
@@ -145,71 +146,22 @@
                             <h2 class="project-name">Netmatters Remake</h2>
                             <p class="project-about">This was a remake of the netmatters website as part of the html and css reflection on the scion course.</p>
                             <div class="languages">
-                                <span class="language html">HTML</span>
+                                <span class="language php">PHP</span>
                                 <span class="language css">CSS</span>
                                 <span class="language java-script">JS</span>
+                                <span class="language sql">SQL</span>
                             </div>
                         </div>
                     </a>
-                    <a class="project sql" href="https://array.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
+                    <a class="project js" href="https://array.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Assets/Images/Array.png" alt="Array">
                         </div>
                         <div class="project-info">
                             <h2 class="project-name">Email-Image Array</h2>
-                            <p class="project-about">Using SQL to attach images to various emails.</p>
-                            <div class="languages">
-                                <span class="language sql">SQL</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="project js" href="#" target="_blank">
-                        <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/project-preview.jpg" alt="NetMatters Project">
-                        </div>
-                        <div class="project-info">
-                            <h2 class="project-name">Project 3</h2>
-                            <p class="project-about">Information about the project. Only a short and basic explanation.</p>
+                            <p class="project-about">Using JS array to attach images to various validated emails.</p>
                             <div class="languages">
                                 <span class="language java-script">JS</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="project css" href="#" target="_blank">
-                        <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/project-preview.jpg" alt="NetMatters Project">
-                        </div>
-                        <div class="project-info">
-                            <h2 class="project-name">Project 4</h2>
-                            <p class="project-about">Information about the project. Only a short and basic explanation.</p>
-                            <div class="languages">
-                                <span class="language css">CSS</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="project js" href="#" target="_blank">
-                        <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/project-preview.jpg" alt="NetMatters Project">
-                        </div>
-                        <div class="project-info">
-                            <h2 class="project-name">Project 5</h2>
-                            <p class="project-about">Information about the project. Only a short and basic explanation.</p>
-                            <div class="languages">
-                                <span class="language java-script">JS</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="project html css php" href="#" target="_blank">
-                        <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/project-preview.jpg" alt="NetMatters Project">
-                        </div>
-                        <div class="project-info">
-                            <h2 class="project-name">Project 6</h2>
-                            <p class="project-about">Information about the project. Only a short and basic explanation.</p>
-                            <div class="languages">
-                                <span class="language html">HTML</span>
-                                <span class="language css">CSS</span>
-                                <span class="language php">PHP</span>
                             </div>
                         </div>
                     </a>

@@ -4,13 +4,16 @@ main {
   padding-bottom: 20px;
 }
 main ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
+  height: 15px;
 }
 main ::-webkit-scrollbar-track {
   background: #93a6e8;
 }
 main ::-webkit-scrollbar-thumb {
   background: #3b404f;
+  border-radius: 5px;
+  border: 2px solid #93a6e8;
 }
 main ::-webkit-scrollbar-thumb:hover {
   background: #252932;
@@ -49,9 +52,9 @@ main .code-explanation .explanation-container {
   width: 100%;
   background: white;
   height: 430px;
-  overflow-y: scroll;
   padding: 10px;
   position: relative;
+  overflow-y: auto;
 }
 main .code-container {
   padding: 20px 20px 20px 0px;
@@ -101,7 +104,7 @@ main .code-container .code-example pre code {
   color: white;
   font-size: 0.9rem;
   height: 200px;
-  overflow: scroll;
+  overflow: auto;
 }
 main .code-container .code-example pre code.open {
   display: block;
@@ -115,6 +118,7 @@ main .code-container .code-preview .preview-container {
   background: white;
   width: 100%;
   height: 200px;
+  border-left: 2px solid rgb(46, 45, 45);
 }
 main .code-container .code-preview .header-bar .preview-title {
   width: 100%;
@@ -354,6 +358,7 @@ main .open-database:hover {
   }
   main .code-example-container .code-preview .preview-container {
     width: 100%;
+    border-left: 0px solid rgb(46, 45, 45);
   }
   main .code-example-container .code-preview .header-bar {
     width: 100%;
