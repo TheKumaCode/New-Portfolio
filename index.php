@@ -138,7 +138,7 @@
                     </form>
                 </div>
                 <div class="projects-container" id="projects-container">
-                    <a class="project php css js sql" href="https://netmatters.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
+                    <a class="project php html css js sql" href="https://netmatters.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Assets/Images/NetMatters_Site.png" alt="NetMatters Project">
                         </div>
@@ -147,13 +147,14 @@
                             <p class="project-about">This was a remake of the netmatters website as part of the html and css reflection on the scion course.</p>
                             <div class="languages">
                                 <span class="language php">PHP</span>
+                                <span class="language html">HTML</span>
                                 <span class="language css">CSS</span>
                                 <span class="language java-script">JS</span>
                                 <span class="language sql">SQL</span>
                             </div>
                         </div>
                     </a>
-                    <a class="project js" href="https://array.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
+                    <a class="project html css js" href="https://array.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
                         <div class="project-img-container">
                             <img class="project-img" src="Assets/Images/Array.png" alt="Array">
                         </div>
@@ -161,7 +162,24 @@
                             <h2 class="project-name">Email-Image Array</h2>
                             <p class="project-about">Using JS array to attach images to various validated emails.</p>
                             <div class="languages">
+                                <span class="language html">HTML</span>
+                                <span class="language css">CSS</span>
                                 <span class="language java-script">JS</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project php sql html css" href="https://laravel.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
+                        <div class="project-img-container">
+                            <img class="project-img" src="Assets/Images/Company Manager.png" alt="Company Manager">
+                        </div>
+                        <div class="project-info">
+                            <h2 class="project-name">Company Manager</h2>
+                            <p class="project-about">Using laravel to create a website for managing companies and employees.</p>
+                            <div class="languages">
+                                <span class="language php">PHP</span>
+                                <span class="language sql">SQL</span>
+                                <span class="language html">HTML</span>
+                                <span class="language css">CSS</span>
                             </div>
                         </div>
                     </a>
