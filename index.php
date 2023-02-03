@@ -138,52 +138,33 @@
                     </form>
                 </div>
                 <div class="projects-container" id="projects-container">
-                    <a class="project php html css js sql" href="https://netmatters.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
+                    <?php 
+                        $sql = "SELECT * FROM project";
+                        $projects = $connect->query($sql);
+                        while($project = $projects->fetch_assoc()) {
+                    ?>
+                    <a class="project" href="<?php echo htmlspecialchars($project['link']) ?>" target="_blank">
                         <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/NetMatters_Site.png" alt="NetMatters Project">
+                            <img class="project-img" src="Assets/Images/<?php echo htmlspecialchars($project['image']) ?>" alt="NetMatters Project">
                         </div>
                         <div class="project-info">
-                            <h2 class="project-name">Netmatters Remake</h2>
-                            <p class="project-about">This was a remake of the netmatters website as part of the html and css reflection on the scion course.</p>
+                            <h2 class="project-name"><?php echo $project['name'] ?></h2>
+                            <p class="project-about"><?php echo $project['about'] ?></p>
                             <div class="languages">
-                                <span class="language php">PHP</span>
-                                <span class="language html">HTML</span>
-                                <span class="language css">CSS</span>
-                                <span class="language java-script">JS</span>
-                                <span class="language sql">SQL</span>
+                                <?php
+                                $indexSQL = "SELECT language_id FROM `project-language` WHERE project_id =". $project['id'];
+                                $languageIndex = $connect->query($indexSQL);
+                                while($languageRow = $languageIndex->fetch_assoc()) {
+                                    $languageSQL = "SELECT language FROM `language` WHERE id =" . $languageRow['language_id'];
+                                    $languageRes = $connect->query($languageSQL);
+                                    $language = $languageRes->fetch_assoc();
+                                    ?>
+                                <span class="language <?php echo htmlspecialchars($language['language']); ?>"><?php echo strtoupper($language['language']) ?> </span>
+                                <?php  } ?>
                             </div>
                         </div>
                     </a>
-                    <a class="project html css js" href="https://array.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
-                        <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/Array.png" alt="Array">
-                        </div>
-                        <div class="project-info">
-                            <h2 class="project-name">Email-Image Array</h2>
-                            <p class="project-about">Using JS array to attach images to various validated emails.</p>
-                            <div class="languages">
-                                <span class="language html">HTML</span>
-                                <span class="language css">CSS</span>
-                                <span class="language java-script">JS</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="project php sql html css" href="https://laravel.robertas-vildziunas.netmatters-scs.co.uk" target="_blank">
-                        <div class="project-img-container">
-                            <img class="project-img" src="Assets/Images/Company Manager.png" alt="Company Manager">
-                        </div>
-                        <div class="project-info">
-                            <h2 class="project-name">Company Manager</h2>
-                            <p class="project-about">Using laravel to create a website for managing companies and employees.</p>
-                            <div class="languages">
-                                <span class="language php">PHP</span>
-                                <span class="language sql">SQL</span>
-                                <span class="language html">HTML</span>
-                                <span class="language css">CSS</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    <?php } ?>
             </div>
             <div id="contact">
                 <div class="contact-col">

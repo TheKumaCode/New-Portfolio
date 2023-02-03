@@ -273,7 +273,7 @@ main #projects .projects-container .project .project-info .languages .language.s
 main #projects .projects-container .project .project-info .languages .language.php {
   background-color: #e38c3f;
 }
-main #projects .projects-container .project .project-info .languages .language.java-script {
+main #projects .projects-container .project .project-info .languages .language.js {
   background-color: #804ebd;
 }
 main #projects .projects-container .project:hover {
